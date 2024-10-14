@@ -1,5 +1,5 @@
 {% set name = "pydantic-settings-sops" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydantic_settings_sops-{{ version }}.tar.gz
-  sha256: d3978e0cc0e8398e451ee85660e0fc871abbbe7e2d5c9cd7a07f3479dd56d64f
+  sha256: a85b3782c2e05ebb3bdf86df53fdaf69506da0f8c8e0925dea5f4e867b5d1587
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
   run:
     - python >=3.10
     - pydantic-settings >=2.5.2,<3
-    - sopsy >=1.0.0,<2
+    - sopsy >=1.0.1,<2
 
 test:
   imports:
