@@ -24,7 +24,7 @@ requirements:
   run:
     - python >=3.10
     - pydantic-settings >=2.5.2,<3
-    - sopsy >=1.0.0,<2
+    - sopsy >=1.0.1,<2
 
 test:
   imports:
