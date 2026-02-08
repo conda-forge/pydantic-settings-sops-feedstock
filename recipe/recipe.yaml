@@ -1,0 +1,44 @@
+context:
+  python_min: "3.10"
+  version: "0.1.2"
+
+package:
+  name: pydantic-settings-sops
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pydantic-settings-sops/pydantic_settings_sops-${{ version }}.tar.gz
+  sha256: 8d03ea8233cec696b4737563947bc668a7cd4a2773252b40948f850784d718cd
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools-scm
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pydantic-settings >=2.5.2,<3
+    - sopsy >=1.0.1,<2
+
+tests:
+  - python:
+      imports:
+        - pydantic_settings_sops
+      pip_check: true
+
+about:
+  homepage: https://github.com/pavelzw/pydantic-settings-sops
+  summary: SOPS extension for pydantic-settings
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - pavelzw
