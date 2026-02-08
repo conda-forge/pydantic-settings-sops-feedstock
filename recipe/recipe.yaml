@@ -11,7 +11,7 @@ source:
   sha256: 8d03ea8233cec696b4737563947bc668a7cd4a2773252b40948f850784d718cd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -vv --no-deps --no-build-isolation
 
@@ -32,6 +32,7 @@ tests:
       imports:
         - pydantic_settings_sops
       pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   homepage: https://github.com/pavelzw/pydantic-settings-sops
